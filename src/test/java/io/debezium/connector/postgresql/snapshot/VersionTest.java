@@ -10,6 +10,14 @@ import org.mockito.Mockito;
 public class VersionTest {
 
     @Test
+    public void testLatestCompatibleVersion() {
+        try (MockedStatic<Module> mockedModule = Mockito.mockStatic(Module.class)) {
+            mockedModule.when(Module::version).thenReturn("1.5.0.Final");
+            Assert.assertTrue(VersionHelper.isCurrentVersionCompatibleWithPlugin());
+        }
+    }
+
+    @Test
     public void testCompatibleVersion() {
         try (MockedStatic<Module> mockedModule = Mockito.mockStatic(Module.class)) {
             mockedModule.when(Module::version).thenReturn("1.4.0.Final");
