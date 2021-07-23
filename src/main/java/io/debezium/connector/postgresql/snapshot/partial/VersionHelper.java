@@ -2,7 +2,6 @@ package io.debezium.connector.postgresql.snapshot.partial;
 
 import io.debezium.connector.postgresql.Module;
 import io.debezium.connector.postgresql.PostgresConnectorConfig;
-import io.debezium.connector.postgresql.connection.MessageDecoderContext;
 import io.debezium.connector.postgresql.snapshot.PartialSnapshotter;
 import io.debezium.connector.postgresql.snapshot.partial.filters.FilterHandler;
 import io.debezium.connector.postgresql.snapshot.partial.filters.handlers.PostgresJdbcFilterHandler;
@@ -12,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class VersionHelper {
 
-    public static String MIN_VERSION = "1.5.0.Final";
+    public static String MIN_VERSION = "1.4.0.Final";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(VersionHelper.class);
 
